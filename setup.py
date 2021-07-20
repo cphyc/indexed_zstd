@@ -15,7 +15,7 @@ extensions = [
                              else [ 'indexed_zstd/indexed_zstd.cpp', 'indexed_zstd/libzstd-seek/zstd-seek.c' ],
         include_dirs       = [ '.' ],
         language           = 'c++',
-        extra_compile_args = [ '-std=c++11', '-O3', '-DNDEBUG' ],
+        extra_compile_args = [ '-O3', '-DNDEBUG' ],
         libraries = ['m', 'zstd'],
     ),
 ]
