@@ -11,11 +11,11 @@ buildCython = '--cython' in sys.argv
 extensions = [
     Extension(
         name               = 'indexed_zstd',
-        sources            = [ 'indexed_zstd/indexed_zstd.pyx', 'indexed_zstd/libzstd-seek/zstd-seek.c' ] if buildCython
-                             else [ 'indexed_zstd/indexed_zstd.cpp', 'indexed_zstd/libzstd-seek/zstd-seek.c' ],
+        sources            = [ 'indexed_zstd/indexed_zstd.pyx', 'indexed_zstd/libzstd-seek/zstd-seek.cpp' ] if buildCython
+                             else [ 'indexed_zstd/indexed_zstd.cpp', 'indexed_zstd/libzstd-seek/zstd-seek.cpp' ],
         include_dirs       = [ '.' ],
         language           = 'c++',
-        extra_compile_args = [ '-O3', '-DNDEBUG' ],
+        extra_compile_args = [ '-std=c++11', '-O3', '-DNDEBUG', '-fpermissive'],
         libraries = ['m', 'zstd'],
     ),
 ]

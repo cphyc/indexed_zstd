@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-#include "libzstd-seek/zstd-seek.h"
+#include "libzstd-seek/zstd-seek.hpp"
 #include "FileReader.hpp"
 
 class ZSTDReader :
